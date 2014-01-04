@@ -1,4 +1,6 @@
-Meridian - http://crampton.me/meridian/
+Meridian
+* Home: http://crampton.me/meridian/
+* Documentation: http://crampton.me/meridian/docs/
 
 About Meridian
 ================================================================================
