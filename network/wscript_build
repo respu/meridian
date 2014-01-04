@@ -1,0 +1,22 @@
+# -*- python -*-
+
+bld.stlib(
+    features = 'cxx cxxstlib',
+    source = bld.path.ant_glob('src/*.cpp'),
+    target = 'meridian_network',
+    includes = 'include',
+    use = ['meridian_core', 'BOOST'],
+    export_includes = 'include')
+
+bld.program(
+    features = 'cxx cxxprogram test',
+    source = bld.path.ant_glob('tests/*.cpp'),
+    target = 'test_meridian_network',
+    unit_test = 1,
+    use = ['meridian_core', 'meridian_network', 'BOOST'])
+
+bld.program(
+    features = 'cxx cxxprogram',
+    source = 'examples/test.cpp',
+    target = 'test_me',
+    use = ['meridian_core', 'meridian_network', 'meridian_reactor', 'BOOST'])

@@ -1,0 +1,17 @@
+# -*- python -*-
+
+bld.stlib(
+    features = 'cxx cxxstlib',
+    source = bld.path.ant_glob('src/*.cpp'),
+    target = 'meridian_core',
+    includes = 'include',
+    use = ['BOOST'],
+    export_includes = 'include')
+
+bld.program(
+    features = 'cxx cxxprogram test',
+    source = bld.path.ant_glob('tests/*.cpp'),
+    target = 'test_meridian_core',
+    unit_test = 1,
+    use = ['meridian_core', 'BOOST'])
+
